@@ -52,4 +52,45 @@ Você pode (e frequentemente deve) ter **ambos**:
 
 ---
 
+---
+
+## Read Replica sob demanda (padrão de otimização de custo)
+
+Na AWS, Read Replicas podem ser **criadas e deletadas a qualquer momento**. Isso é um padrão válido para uso esporádico:
+
+```
+Precisa do relatório (mensal/semanal):
+  1. Cria Read Replica (~15-30 min)
+  2. Roda queries pesadas na réplica
+  3. Deleta Read Replica
+  4. Paga $0 no restante do período
+```
+
+**Quando usar:**
+- Relatórios mensais/semanais pesados
+- Cenário pede "menor custo" + "uso esporádico"
+- Não precisa da réplica 24/7
+
+**Mentalidade AWS:** Recursos são descartáveis. Criar/deletar leva minutos. Os dados originais ficam seguros no primário — a réplica é uma cópia descartável.
+
+| Frequência do uso | Manter réplica 24/7? |
+|---|---|
+| Diário ou contínuo | ✅ Sim (economiza tempo de criação) |
+| Semanal ou mensal | ❌ Não (cria sob demanda = menor custo) |
+
+---
+
+## RDS Proxy — o que é e o que NÃO é
+
+**O que faz:** Gerencia connection pooling — reutiliza conexões ao banco para não esgotar o limite.
+
+**O que NÃO faz:**
+- ❌ NÃO distribui queries para o standby Multi-AZ
+- ❌ NÃO transforma standby em leitor
+- ❌ NÃO substitui Read Replica para offload de leitura
+
+**Quando usar:** Aplicações com muitas conexões curtas (Lambda com centenas de invocações simultâneas abrindo conexões ao RDS).
+
+---
+
 *Domínio 2 — Design de Arquiteturas Resilientes (26%)*
