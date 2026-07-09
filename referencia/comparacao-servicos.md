@@ -46,6 +46,7 @@
 | Serviço | Padrão | Use quando... |
 |---|---|---|
 | **SQS** | Fila (pull) | Desacoplar, buffer, garantir processamento |
+| **SQS FIFO** | Fila ordenada (pull) | Ordem exata + exactly-once delivery |
 | **SNS** | Pub/Sub (push) | Notificar múltiplos destinos |
 | **EventBridge** | Event bus | Orquestrar entre serviços, regras complexas |
 | **Kinesis Data Streams** | Streaming | Ingestão em tempo real, múltiplos consumers |
@@ -66,7 +67,32 @@
 
 ---
 
-## Networking
+## Segurança — Identidade e Acesso
+
+| Serviço | Use quando... |
+|---|---|
+| **IAM Role** | EC2/Lambda acessar serviços AWS sem access key |
+| **IAM Policy** | Definir o que uma identidade pode fazer (actions + resources) |
+| **IAM Identity Center** | Login único (SSO) para funcionários em múltiplas contas AWS |
+| **Cognito User Pool** | Autenticar usuários finais de apps mobile/web |
+| **Cognito Identity Pool** | Usuário autenticado acessar recurso AWS diretamente |
+| **Cross-account Role** | Conta A acessar recurso na conta B |
+| **Presigned URL** | Acesso temporário a objeto S3 sem tornar público (máx 7 dias) |
+| **ACM** | Certificados SSL/TLS para ALB, CloudFront, API Gateway |
+
+---
+
+## Segurança — Detecção e Monitoramento
+
+| Serviço | O que detecta | Onde |
+|---|---|---|
+| **CloudTrail** | Quem fez o quê e quando (auditoria de API) | Toda a conta |
+| **AWS Config** | Recursos fora de conformidade com regras definidas | Toda a conta |
+| **GuardDuty** | Comportamento anômalo e ameaças em tempo real | Toda a conta |
+| **Macie** | Dados sensíveis (PII, cartão de crédito, CPF) | Somente S3 |
+| **Inspector** | Vulnerabilidades de software (CVEs, patches, portas) | EC2, containers, Lambda |
+
+> Detecção ≠ Prevenção. Todos os serviços acima **detectam** — para **bloquear** use SCP, WAF, Security Group, NACL, Bucket Policy.
 
 | Serviço | Use quando... |
 |---|---|

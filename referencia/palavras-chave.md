@@ -47,7 +47,10 @@
 | "DDoS + suporte 24/7" | Shield Advanced |
 | "quem fez o quê, auditoria" | CloudTrail |
 | "conformidade, compliance, regras" | AWS Config |
+| "notificar quando violar regra de conformidade" | AWS Config + SNS |
+| "corrigir automaticamente recurso fora da regra" | AWS Config + EventBridge + Lambda |
 | "comportamento anômalo, ameaça" | GuardDuty |
+| "GuardDuty detectou + ação automática" | GuardDuty + EventBridge + Lambda |
 | "impedir ação em toda a organização" | SCP |
 | "gerenciar múltiplas contas" | AWS Organizations |
 | "compartilhar subnet entre contas" | AWS RAM |
@@ -55,6 +58,16 @@
 | "conectar múltiplas VPCs" | Transit Gateway |
 | "rejeitar upload sem criptografia no S3" | Bucket Policy (Deny PutObject) |
 | "forçar HTTPS no S3" | Bucket Policy (SecureTransport) |
+| "acesso temporário a arquivo S3 sem tornar público" | Presigned URL (máx 7 dias) |
+| "app mobile/web + autenticar usuários clientes" | Cognito User Pool |
+| "usuário do app acessa S3/DynamoDB diretamente" | Cognito Identity Pool |
+| "login social (Google/Facebook) na aplicação" | Cognito User Pool |
+| "login único para funcionários em N contas AWS" | IAM Identity Center |
+| "SSO + Active Directory corporativo + acesso AWS" | IAM Identity Center |
+| "landing zone, setup multi-conta do zero" | Control Tower |
+| "certificado SSL/TLS para ALB/CloudFront" | ACM |
+| "dados sensíveis no S3 / PII / LGPD / cartão de crédito" | Macie |
+| "vulnerabilidade em EC2 / CVE / patch / container" | Inspector |
 
 ---
 

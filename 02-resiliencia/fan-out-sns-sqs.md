@@ -45,9 +45,29 @@ A SQS atua como **buffer durável** entre o SNS e cada serviço consumidor.
 
 | Serviço | Padrão | Use quando... |
 |---|---|---|
-| **SQS** | Fila (pull) | Desacoplar 1:1, buffer, garantir processamento |
+| **SQS Standard** | Fila (pull) | Desacoplar 1:1, buffer, garantir processamento (sem ordem garantida) |
+| **SQS FIFO** | Fila ordenada (pull) | Desacoplar 1:1 + ordem exata + exactly-once delivery |
 | **SNS** | Pub/Sub (push) | Notificar N assinantes simultaneamente |
 | **EventBridge** | Event bus | Orquestrar entre serviços AWS/SaaS, regras complexas |
+
+---
+
+## SQS Standard vs SQS FIFO
+
+| | SQS Standard | SQS FIFO |
+|---|---|---|
+| **Ordem** | ❌ Não garantida | ✅ Garantida (First In, First Out) |
+| **Duplicatas** | Possível | ❌ Exactly-once (sem duplicatas) |
+| **Throughput** | Ilimitado | Até 300 msg/s (3.000 com batching) |
+| **Quando usar** | Ordem não importa | Ordem crítica (pedidos, transações) |
+
+> **Regra:** "ordem exata" ou "processar na sequência que chegou" → **SQS FIFO**
+
+---
+
+## EventBridge — por que não resolve garantia de entrega
+
+EventBridge roteia eventos entre serviços mas **não tem fila de buffer**. Se o destino estiver fora do ar no momento do evento, a mensagem pode ser perdida. Para garantia de entrega → SQS.
 
 ---
 

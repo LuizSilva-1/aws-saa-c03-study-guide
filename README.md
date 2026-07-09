@@ -1,7 +1,67 @@
 # Tópicos de Estudo — AWS SAA-C03
 
-> Material de estudo para a certificação AWS Solutions Architect Associate (SAA-C03).
-> Cada arquivo cobre um tópico específico. Organizado por domínio.
+> **Este material é vivo.** Tudo que está aqui surgiu de uma conversa real — uma pergunta respondida, um erro cometido, uma dúvida esclarecida. Nada foi copiado ou inventado. A cada sessão de estudo, novos tópicos são adicionados, erros são corrigidos e o conteúdo evolui. Se você chegou aqui, pode usar este repositório como base para o seu próprio aprendizado — o material reflete o que realmente funciona quando estudado com raciocínio ativo, não memorização passiva.
+
+---
+
+## Por que esse método fez diferença para mim
+
+Ao longo da minha jornada de estudos, sempre aprendi lendo e assistindo vídeoaulas. Nunca consegui aprender fazendo anotações ou resumos — sempre achei trabalhoso demais e o conteúdo simplesmente não ficava quando tentava escrever dessa forma. Meu jeito natural sempre foi absorver ouvindo e lendo, não registrando.
+
+O problema é que isso tem um limite. Para uma prova como o SAA-C03, que testa tomada de decisão arquitetural em cenários com quatro opções plausíveis, não basta absorver — você precisa raciocinar sob pressão e escolher a melhor resposta entre alternativas que parecem igualmente corretas.
+
+O que essa metodologia trouxe de diferente foi uma coisa simples: **eu sou obrigado a explicar o meu raciocínio**.
+
+Não basta escolher uma resposta. Para cada questão, preciso dizer por que escolhi aquela opção, por que as outras estão erradas e o que no enunciado me levou até ela. Isso força um nível de consciência sobre o próprio pensamento que ler e ouvir nunca conseguiram sozinhos.
+
+Os erros que aparecem neste material são reais — e são parte do aprendizado. Em vários momentos confundi contextos diferentes, apliquei um conceito onde não cabia, ou escolhi um serviço pelo motivo errado mesmo acertando a resposta. O Kiro identificou cada uma dessas confusões, corrigiu com precisão e registrou aqui para não se repetir.
+
+Esse repositório é o resultado de um formato que funcionou para mim: dialogar, errar, explicar e corrigir. Se você também aprende melhor conversando do que anotando, talvez esse material e essa abordagem funcionem para você também.
+
+---
+
+## Sobre este material
+
+Este repositório é um **diário de aprendizado ativo** para a certificação AWS Certified Solutions Architect - Associate (SAA-C03).
+
+A jornada começou a partir do artigo publicado no blog oficial da AWS Brasil:
+**[Pratique exames de certificação AWS com feedback de IA no Kiro](https://aws.amazon.com/pt/blogs/aws-brasil/pratique-exames-de-certificacao-aws-com-feedback-de-ia-no-kiro/)**
+— escrito por Marcus Santos e Lucas Leme Lopes, consultores de Professional Services Brasil.
+
+O artigo apresenta o **Kiro Study Buddy**, um power open-source para o Kiro IDE que transforma o estudo passivo em **raciocínio ativo**: em vez de memorizar definições, você pratica justificando suas decisões arquiteturais e recebe feedback baseado na documentação oficial da AWS.
+
+O estudo foi conduzido com apoio do **Kiro** — assistente de IA da AWS integrado ao ambiente de desenvolvimento — como parceiro de estudos: propondo questões com pegadinhas, identificando lacunas de conhecimento, corrigindo conceitos invertidos e mantendo este material sempre atualizado com o progresso real.
+
+O conteúdo não foi copiado de livro nem de curso. Cada arquivo, cada tabela de palavras-chave e cada correção registrada existem porque surgiram naturalmente durante o estudo:
+
+- ✅ Acertos e erros em questões práticas no estilo do exame real
+- ✅ Análise do raciocínio por trás de cada resposta, não só o resultado
+- ✅ Correções aplicadas no momento da dúvida, com o conceito certo em mãos
+- ✅ Revisão contínua dos pontos onde houve confusão
+
+> A ideia central — citada no próprio artigo: **"Você pratica raciocínio ativo, não memorização."** Não basta acertar — é preciso saber por que as outras opções estão erradas.
+
+---
+
+## Contexto — primeiro exame
+
+| Campo | Valor |
+|---|---|
+| Data | 03/12/2025 |
+| Pontuação | 698 / 1000 |
+| Mínimo para passar | 720 |
+| Resultado | ❌ Reprovado (22 pontos abaixo) |
+
+Resultado por domínio no primeiro exame:
+
+| Domínio | Peso | Resultado |
+|---|---|---|
+| Design de arquiteturas seguras | 30% | Precisa melhorar |
+| Design de arquiteturas resilientes | 26% | Precisa melhorar |
+| Design de arquiteturas de alta performance | 24% | ✅ Atende |
+| Design de arquiteturas econômicas | 20% | Precisa melhorar |
+
+Este material foi construído focado nesses gaps reais.
 
 ---
 
@@ -18,23 +78,26 @@
 
 ## Domínio 1 — Design de Arquiteturas Seguras (30%)
 
-- [Security Group vs NACL](01-seguranca/security-group-vs-nacl.md)
-- [VPC Endpoints](01-seguranca/vpc-endpoints.md)
-- [KMS e Criptografia](01-seguranca/kms-criptografia.md)
-- [IAM — Roles, Policies e Users](01-seguranca/iam-roles-policies.md)
-- [Modelo de 3 Camadas de Segurança](01-seguranca/modelo-3-camadas-seguranca.md)
-- [Subnet Pública vs Privada](01-seguranca/subnet-publica-vs-privada.md)
-- [Bucket Policy no S3](01-seguranca/bucket-policy-s3.md)
-- [WAF e Shield — Proteção contra ataques](01-seguranca/waf-shield-ddos.md)
-- [CloudTrail vs Config vs GuardDuty](01-seguranca/cloudtrail-config-guardduty.md)
+- [Amazon Cognito](01-seguranca/cognito.md)
 - [AWS Organizations, SCPs e RAM](01-seguranca/organizations-scp-ram.md)
+- [Bucket Policy no S3](01-seguranca/bucket-policy-s3.md)
+- [CloudTrail vs Config vs GuardDuty](01-seguranca/cloudtrail-config-guardduty.md)
+- [IAM — Roles, Policies e Users](01-seguranca/iam-roles-policies.md)
+- [IAM Identity Center (SSO) e ACM](01-seguranca/iam-identity-center.md)
+- [KMS e Criptografia](01-seguranca/kms-criptografia.md)
+- [Macie, Inspector e Presigned URL](01-seguranca/macie-inspector.md)
+- [Modelo de 3 Camadas de Segurança](01-seguranca/modelo-3-camadas-seguranca.md)
+- [Security Group vs NACL](01-seguranca/security-group-vs-nacl.md)
+- [Subnet Pública vs Privada](01-seguranca/subnet-publica-vs-privada.md)
+- [VPC Endpoints](01-seguranca/vpc-endpoints.md)
+- [WAF e Shield — Proteção contra ataques](01-seguranca/waf-shield-ddos.md)
 
 ## Domínio 2 — Design de Arquiteturas Resilientes (26%)
 
-- [RDS Multi-AZ vs Read Replicas](02-resiliencia/multi-az-vs-read-replicas.md)
+- [Auto Scaling e Availability Zones](02-resiliencia/auto-scaling-azs.md)
 - [Desacoplamento com SQS](02-resiliencia/desacoplamento-sqs.md)
 - [Fan-out com SNS + SQS](02-resiliencia/fan-out-sns-sqs.md)
-- [Auto Scaling e Availability Zones](02-resiliencia/auto-scaling-azs.md)
+- [RDS Multi-AZ vs Read Replicas](02-resiliencia/multi-az-vs-read-replicas.md)
 
 ## Domínio 3 — Design de Arquiteturas de Alta Performance (24%)
 
@@ -45,14 +108,14 @@
 
 ## Domínio 4 — Design de Arquiteturas Econômicas (20%)
 
-- [Modelos de Compra EC2](04-custo/modelos-compra-ec2.md)
 - [Classes de Armazenamento S3](04-custo/classes-armazenamento-s3.md)
+- [Modelos de Compra EC2](04-custo/modelos-compra-ec2.md)
 
 ## Referência Rápida
 
-- [Palavras-chave → Serviço (Tabela Mestre)](referencia/palavras-chave.md)
-- [Método de Eliminação para a Prova](referencia/metodo-eliminacao.md)
 - [Comparação de Serviços](referencia/comparacao-servicos.md)
+- [Método de Eliminação para a Prova](referencia/metodo-eliminacao.md)
+- [Palavras-chave → Serviço (Tabela Mestre)](referencia/palavras-chave.md)
 
 ---
 

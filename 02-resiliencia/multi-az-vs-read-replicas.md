@@ -22,6 +22,8 @@
 | "relatórios pesados", "isolar carga de leitura", "analytics degradando", "BI" | **Read Replica** |
 | "DR cross-region", "recuperação em outra região" | **Read Replica cross-region** (promoção manual) |
 | "alta disponibilidade" + "relatórios" (os dois juntos) | **Multi-AZ + Read Replica** (são complementares) |
+| "Read Replica na mesma AZ que o primário" | ❌ Não resolve resiliência — perde os dois se a AZ cair |
+| "usar standby para leitura/BI" | ❌ Sempre errado — standby não aceita conexões |
 
 ---
 
