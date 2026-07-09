@@ -10,13 +10,15 @@ Ao longo da minha jornada de estudos, sempre aprendi lendo e assistindo vídeoau
 
 O problema é que isso tem um limite. Para uma prova como o SAA-C03, que testa tomada de decisão arquitetural em cenários com quatro opções plausíveis, não basta absorver — você precisa raciocinar sob pressão e escolher a melhor resposta entre alternativas que parecem igualmente corretas.
 
-O que essa metodologia trouxe de diferente foi uma coisa simples: **eu sou obrigado a explicar o meu raciocínio**.
+O que percebi ao longo desse processo foi algo que não esperava: **eu comecei a escrever naturalmente — sem perceber e sem forçar**.
 
-Não basta escolher uma resposta. Para cada questão, preciso dizer por que escolhi aquela opção, por que as outras estão erradas e o que no enunciado me levou até ela. Isso força um nível de consciência sobre o próprio pensamento que ler e ouvir nunca conseguiram sozinhos.
+Não como anotação. Mas como teste do meu próprio entendimento. Para cada questão, preciso colocar em palavras por que escolhi aquela opção, por que as outras estão erradas e o que no enunciado me levou até ela. Escrever virou o meio de descobrir se o que eu achava que tinha entendido era real ou apenas familiar.
 
-Os erros que aparecem neste material são reais — e são parte do aprendizado. Em vários momentos confundi contextos diferentes, apliquei um conceito onde não cabia, ou escolhi um serviço pelo motivo errado mesmo acertando a resposta. O Kiro identificou cada uma dessas confusões, corrigiu com precisão e registrou aqui para não se repetir.
+E foi aí que as confusões apareceram. Ler e assistir vídeoaulas me davam o conteúdo — mas não me diziam onde meu raciocínio estava errado. Só quando precisei escrever e justificar é que ficou evidente que eu confundia contextos parecidos, aplicava conceitos certos no cenário errado, ou escolhia o serviço correto pelo motivo incorreto. O Kiro mapeou cada uma dessas confusões, corrigiu com precisão e registrou aqui para não se repetir.
 
-Esse repositório é o resultado de um formato que funcionou para mim: dialogar, errar, explicar e corrigir. Se você também aprende melhor conversando do que anotando, talvez esse material e essa abordagem funcionem para você também.
+Esse repositório é o resultado disso: um jeito de estudar que me fez fazer, pela primeira vez, o que nunca tinha conseguido fazer na vida — registrar o que aprendi. Não porque foi exigido, mas porque fez sentido dentro do processo.
+
+Se você também aprende melhor lendo e ouvindo do que anotando, talvez esse formato funcione para você também: não escreva para resumir — escreva para testar se você realmente entendeu.
 
 ---
 
