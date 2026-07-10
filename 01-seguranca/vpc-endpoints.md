@@ -13,6 +13,8 @@ Permitem que recursos na VPC acessem serviços AWS **sem sair para a internet p�
 | **Gateway Endpoint** | S3 e DynamoDB (somente) | Gratuito | Entrada na route table da subnet |
 | **Interface Endpoint** | Todos os outros serviços | Pago (hora + GB) | ENI com IP privado na subnet |
 
+> **⚠️ LEMBRETE:** Gateway Endpoint = SOMENTE S3 e DynamoDB. Qualquer outro serviço (CloudWatch, SQS, KMS, SNS, etc.) = Interface Endpoint. Se a prova oferecer "Gateway Endpoint para CloudWatch" → está ERRADO.
+
 ---
 
 ## Quando usar

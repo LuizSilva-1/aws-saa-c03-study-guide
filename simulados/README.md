@@ -12,6 +12,7 @@
 | 08/07/2026 | Simulado 1 (5 questões) | 1/5 (20%) | ❌ FAIL | Primeiro contato — muitas confusões conceituais |
 | 08/07/2026 | Simulado 2 (5 questões) | 4/5 (80%) | ✅ PASS | Após estudo dirigido — grande evolução |
 | 09/07/2026 | Simulado 3 (10 questões) | 6/10 (60%) | ❌ FAIL | Segurança melhorou! Erros em conceitos novos (Savings Plans, NAT, Lambda@Edge) |
+| 09/07/2026 | Simulado 4 (5 questões) | 4/5 (80%) | ✅ PASS | Conceitos reforçados fixaram. Único erro: não leu "personalizado" (Lambda@Edge) |
 
 ---
 
@@ -86,7 +87,7 @@
 Score %
 100 |
  90 |
- 80 |          ★ S2 (80%)
+ 80 |          ★ S2 (80%)          ★ S4 (80%)
  70 |     ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  Nota de corte (72%)
  60 |                    ★ S3 (60%)
  50 |
@@ -97,6 +98,26 @@ Score %
   0 |___________________________________
      S1        S2        S3        S4
 ```
+
+---
+
+## Simulado 4 — 09/07/2026 (5 questões)
+
+**Score: 4/5 (80%) — PASS**
+
+| Q# | Domínio | Resultado | Conceito testado | Observação |
+|---|---|---|---|---|
+| 1 | Segurança | ✅ | NAT Gateway + Gateway Endpoint + Interface Endpoint | Identificou que CloudWatch precisa de Interface Endpoint (não Gateway) |
+| 2 | Alta Performance | ❌ | Lambda@Edge vs CloudFront cache | Não leu "personalizado" — escolheu cache com TTL |
+| 3 | Custo | ✅ | Compute SP + Spot + On-Demand (scheduled) | Combinação perfeita para 3 workloads diferentes |
+| 4 | Resiliência | ✅ | DR Warm Standby (RTO 30 min, RPO 5 min) | Boa eliminação das outras estratégias |
+| 5 | Resiliência | ✅ | Kinesis Data Streams para streaming IoT | Múltiplos consumers + retenção 7 dias |
+
+**Lições aprendidas:**
+- ANTES de escolher CloudFront cache, perguntar: "dois usuários receberiam a mesma resposta?" Se NÃO → Lambda@Edge
+- Gateway Endpoint = S3 e DynamoDB APENAS. Qualquer outro serviço = Interface Endpoint
+- DR strategies: Backup&Restore < Pilot Light < Warm Standby < Active-Active (custo e RTO)
+- Kinesis vs SQS: streaming + múltiplos consumers + retenção → Kinesis
 
 ---
 

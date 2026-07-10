@@ -58,6 +58,13 @@
 | "conectar múltiplas VPCs" | Transit Gateway |
 | "rejeitar upload sem criptografia no S3" | Bucket Policy (Deny PutObject) |
 | "forçar HTTPS no S3" | Bucket Policy (SecureTransport) |
+| "streaming + múltiplos consumers + retenção" | Kinesis Data Streams |
+| "entregar dados para S3/Redshift sem código" | Kinesis Firehose |
+| "DR + RTO horas + menor custo" | Backup & Restore |
+| "DR + RTO 30 min + custo moderado" | Pilot Light ou Warm Standby |
+| "DR + zero downtime" | Multi-Site Active-Active |
+| "personalizado + latência < 100ms global" | Lambda@Edge |
+| "flexibilidade tipo instância + desconto + EC2/Fargate/Lambda" | Compute Savings Plans |
 | "acesso temporário a arquivo S3 sem tornar público" | Presigned URL (máx 7 dias) |
 | "app mobile/web + autenticar usuários clientes" | Cognito User Pool |
 | "usuário do app acessa S3/DynamoDB diretamente" | Cognito Identity Pool |

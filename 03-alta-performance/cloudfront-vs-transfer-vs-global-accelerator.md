@@ -59,4 +59,53 @@ Confundir Transfer Acceleration (upload) com CloudFront (download):
 
 ---
 
+## Lambda@Edge — compute no edge
+
+**O que é:** Permite executar código (Lambda) nos edge locations do CloudFront, perto do usuário.
+
+**Quando usar:**
+- Resposta **personalizada** por usuário (ex: dashboard, saldo, recomendações)
+- Exige latência **< 100ms global**
+- **Sem replicar** a aplicação para outras regiões
+
+**Limitações:**
+- Execução máxima: 5 segundos (viewer request/response) ou 30 segundos (origin request/response)
+- Memória: até 10.240 MB
+- Não é para processamento pesado (vídeo, ML)
+
+**A analogia:** Um chef vai até a cidade do cliente e cozinha o prato personalizado lá — não precisa ir até o restaurante central.
+
+---
+
+## ⚠️ LEMBRETE CRÍTICO — cache vs personalização
+
+**ANTES de escolher CloudFront com cache, pergunte-se:**
+> "Se dois usuários diferentes acessarem a mesma URL, devem receber a MESMA resposta?"
+
+| Resposta | Solução |
+|---|---|
+| **SIM** (produto, artigo, vídeo) | CloudFront com cache ✅ |
+| **NÃO** (saldo, perfil, extrato, recomendações) | Lambda@Edge ✅ (cache ❌) |
+
+**Palavras que ELIMINAM cache:**
+- "personalizado", "por cliente", "saldo", "extrato", "perfil", "recomendações"
+
+**Palavras que INDICAM cache:**
+- "catálogo", "produto", "artigo", "vídeo", "imagem", "mesmo para todos"
+
+---
+
+## Resumo: CloudFront vs Global Accelerator vs Lambda@Edge
+
+| Cenário | Solução | Por quê |
+|---|---|---|
+| Conteúdo **igual** para todos + latência | **CloudFront (cache)** | Cacheia e serve do edge |
+| **TCP/UDP** + IPs fixos + failover entre regiões | **Global Accelerator** | Otimiza rede, não é HTTP |
+| Conteúdo **personalizado** + latência < 100ms | **Lambda@Edge** | Compute no edge |
+| App dinâmica + melhorar latência (sem exigir < 100ms) | **Global Accelerator** | Backbone privada, melhora ~30-40% |
+
+> **Regra:** Precisa de **cache** → CloudFront. Precisa de **código** no edge → Lambda@Edge. Precisa de **rede otimizada** → Global Accelerator.
+
+---
+
 *Domínio 3 — Design de Arquiteturas de Alta Performance (24%)*

@@ -98,7 +98,9 @@ Este material foi construído focado nesses gaps reais.
 
 - [Auto Scaling e Availability Zones](02-resiliencia/auto-scaling-azs.md)
 - [Desacoplamento com SQS](02-resiliencia/desacoplamento-sqs.md)
+- [Disaster Recovery (DR)](02-resiliencia/disaster-recovery.md)
 - [Fan-out com SNS + SQS](02-resiliencia/fan-out-sns-sqs.md)
+- [Kinesis vs SQS — Streaming vs Fila](02-resiliencia/kinesis-vs-sqs.md)
 - [RDS Multi-AZ vs Read Replicas](02-resiliencia/multi-az-vs-read-replicas.md)
 
 ## Domínio 3 — Design de Arquiteturas de Alta Performance (24%)
@@ -118,6 +120,10 @@ Este material foi construído focado nesses gaps reais.
 - [Comparação de Serviços](referencia/comparacao-servicos.md)
 - [Método de Eliminação para a Prova](referencia/metodo-eliminacao.md)
 - [Palavras-chave → Serviço (Tabela Mestre)](referencia/palavras-chave.md)
+
+## Simulados
+
+- [Evolução dos Simulados](simulados/README.md)
 
 ---
 

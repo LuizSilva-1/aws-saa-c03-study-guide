@@ -1,5 +1,19 @@
 # Modelos de Compra EC2
 
+## Modelos de compra EC2
+
+## ⚠️ LEMBRETE — Savings Plans na prova
+
+| Tipo de Savings Plan | Abrange | Flexibilidade |
+|---|---|---|
+| **EC2 Instance SP** | Só EC2 (família específica, região específica) | Baixa |
+| **Compute SP** | EC2 + Fargate + Lambda | Total (tipo, tamanho, região, SO) |
+
+Na prova, se pedir "flexibilidade" + "desconto" + "um único compromisso" → **Compute Savings Plans**.
+Convertible RI é quase sempre distrator — Compute SP faz o mesmo com mais flexibilidade e mais desconto.
+
+---
+
 ## Comparação
 
 | Modelo | Desconto | Compromisso | Interrupção | Quando usar |
