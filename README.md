@@ -96,23 +96,31 @@ Este material foi construído focado nesses gaps reais.
 
 ## Domínio 2 — Design de Arquiteturas Resilientes (26%)
 
+- [Amazon MQ — RabbitMQ/ActiveMQ gerenciado](02-resiliencia/amazon-mq.md)
 - [Auto Scaling e Availability Zones](02-resiliencia/auto-scaling-azs.md)
+- [CloudWatch Alarms — Composite Alarms](02-resiliencia/cloudwatch-alarms.md)
 - [Desacoplamento com SQS](02-resiliencia/desacoplamento-sqs.md)
 - [Disaster Recovery (DR)](02-resiliencia/disaster-recovery.md)
+- [DynamoDB — Resiliência e Auditoria (PITR, Streams)](02-resiliencia/dynamodb-resiliencia.md)
 - [Fan-out com SNS + SQS](02-resiliencia/fan-out-sns-sqs.md)
 - [Kinesis vs SQS — Streaming vs Fila](02-resiliencia/kinesis-vs-sqs.md)
+- [RDS Custom — Acesso ao SO](02-resiliencia/rds-custom.md)
 - [RDS Multi-AZ vs Read Replicas](02-resiliencia/multi-az-vs-read-replicas.md)
 
 ## Domínio 3 — Design de Arquiteturas de Alta Performance (24%)
 
+- [Amazon Athena e AWS Glue Job Bookmarks](03-alta-performance/athena-glue.md)
 - [CloudFront vs Transfer Acceleration vs Global Accelerator](03-alta-performance/cloudfront-vs-transfer-vs-global-accelerator.md)
+- [CloudWatch Logs → OpenSearch](03-alta-performance/cloudwatch-logs-opensearch.md)
 - [Conteúdo Estático vs Dinâmico](03-alta-performance/conteudo-estatico-vs-dinamico.md)
 - [ElastiCache — quando usar](03-alta-performance/elasticache.md)
 - [Load Balancers (ALB, NLB, GWLB)](03-alta-performance/load-balancers.md)
+- [S3 Replication + EventBridge](03-alta-performance/s3-replication-eventbridge.md)
 
 ## Domínio 4 — Design de Arquiteturas Econômicas (20%)
 
 - [Classes de Armazenamento S3](04-custo/classes-armazenamento-s3.md)
+- [Migração de Dados — Snowball, DataSync, Direct Connect](04-custo/migracao-dados.md)
 - [Modelos de Compra EC2](04-custo/modelos-compra-ec2.md)
 
 ## Referência Rápida

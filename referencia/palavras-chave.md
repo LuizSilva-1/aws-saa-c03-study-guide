@@ -75,6 +75,35 @@
 | "certificado SSL/TLS para ALB/CloudFront" | ACM |
 | "dados sensíveis no S3 / PII / LGPD / cartão de crédito" | Macie |
 | "vulnerabilidade em EC2 / CVE / patch / container" | Inspector |
+| "múltiplas condições para disparar alarme" | CloudWatch Composite Alarm |
+| "reduzir falsos alarmes" | CloudWatch Composite Alarm |
+| "ETL reprocessando dados antigos no Glue" | Glue Job Bookmarks |
+| "consultar dados no S3 sem servidor" | Amazon Athena |
+| "queries ad-hoc em data lake" | Amazon Athena |
+| "RabbitMQ gerenciado na AWS" | Amazon MQ |
+| "migrar fila RabbitMQ/ActiveMQ" | Amazon MQ |
+| "broker ativo/standby multi-AZ" | Amazon MQ |
+| "acesso ao SO + banco gerenciado" | RDS Custom |
+| "Oracle com personalização avançada" | RDS Custom for Oracle |
+| "RPO baixo + DynamoDB" | DynamoDB PITR |
+| "auditoria de mudanças DynamoDB" | DynamoDB Streams |
+| "copiar objetos entre buckets automaticamente" | S3 Replication (não Lambda) |
+| "múltiplos destinos após chegada no S3 (Lambda + SageMaker)" | S3 Replication + EventBridge |
+| "mesma chave KMS em múltiplas regiões" | KMS multi-region key |
+| "criptografar + replicar cross-region + mesma chave" | SSE-KMS multi-region + CRR |
+| "logs CloudWatch → OpenSearch, tempo real" | Subscription Filter ou Kinesis Firehose |
+| "centenas de TB + prazo curto + banda limitada" | AWS Snowball |
+| "armazenar por anos + acesso raramente + menor custo" | S3 Glacier Deep Archive |
+| "mover dados entre classes S3 automaticamente" | S3 Lifecycle Policy |
+| "ALB em qual subnet?" | Sempre subnet **pública** |
+| "EC2 / RDS em qual subnet?" | Sempre subnet **privada** |
+| "EC2 privada acessa internet para updates" | NAT Gateway (na subnet pública) |
+| "gateway de internet privado" | Não existe — sempre é NAT Gateway |
+| "Fargate + Lambda + desconto comprometido" | Compute Savings Plan (não EC2 SP) |
+| "EC2 mínimo garantido + picos" | Reserved (mínimo) + Spot (picos) |
+| "Static site + atualizações esporádicas" | S3 static hosting + CloudFront |
+| "CloudFront fornece HTTPS?" | Sim, via ACM — WAF não fornece HTTPS |
+| "monitorar endpoint / simular usuário" | CloudWatch Synthetics (canário) |
 
 ---
 
