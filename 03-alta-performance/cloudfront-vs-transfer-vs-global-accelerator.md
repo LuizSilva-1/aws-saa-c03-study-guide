@@ -109,3 +109,28 @@ Confundir Transfer Acceleration (upload) com CloudFront (download):
 ---
 
 *Domínio 3 — Design de Arquiteturas de Alta Performance (24%)*
+
+
+---
+
+## 📝 Nota: Cenário clássico de prova — DNS multi-região
+
+**Cenário:** Serviço DNS rodando em EC2 atrás de NLBs em duas regiões (us-east-1 e eu-west-1). Precisa otimizar latência global.
+
+**Resposta correta:** AWS Global Accelerator com NLBs como endpoints em cada região.
+
+**Por que NÃO CloudFront:**
+- DNS usa **UDP porta 53** — CloudFront só suporta HTTP/HTTPS
+- Tráfego DNS é dinâmico e não cacheável
+
+**Por que NÃO Route 53 geolocation:**
+- Geolocalização roteia por localização geográfica do IP, não por latência real
+- Não oferece a mesma otimização de rede que o Global Accelerator (backbone AWS)
+
+**Por que Global Accelerator:**
+- Suporta **TCP e UDP** (perfeito para DNS)
+- IPs anycast direcionam tráfego ao endpoint mais próximo por **latência real**
+- NLBs são endpoints nativos suportados
+- Failover automático entre regiões com health checks
+
+> **Regra rápida:** Se o serviço NÃO é HTTP/HTTPS e precisa de otimização global → Global Accelerator é a única opção válida.
