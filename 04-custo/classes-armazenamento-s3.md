@@ -52,9 +52,26 @@ Para dados que **não podem ser deletados** antes de um prazo:
 | Modo | Quem pode deletar antes do prazo? |
 |---|---|
 | **Governance** | Usuários com permissão especial (`s3:BypassGovernanceRetention`) |
-| **Compliance** | **Ninguém** — nem o root da conta |
+| **Compliance** | **Ninguém** — nem o root da conta, nem admin, nem AWS |
 
-> **Regra:** compliance + regulatório + LGPD + HIPAA → Object Lock modo **Compliance**
+### Analogia
+
+- **Governance** = "tranquei a porta mas o gerente tem a chave reserva"
+- **Compliance** = "tranquei a porta e joguei a chave no mar — ninguém abre até o prazo"
+
+### Decisão na prova
+
+| Cenário | Modo |
+|---|---|
+| "Nenhum usuário pode modificar/excluir" | **Compliance** |
+| "Regulatório", "HIPAA", "LGPD", "ensaio médico" | **Compliance** |
+| "Proteção contra exclusão acidental, admin pode override" | **Governance** |
+
+### Por que IAM Policy / Bucket Policy NÃO substitui Object Lock
+
+Policies podem ser **alteradas por humanos** a qualquer momento. Um admin pode mudar a policy amanhã e liberar exclusão. Object Lock Compliance é uma **trava física** que nenhum humano pode desativar durante o período de retenção.
+
+> **Regra:** "ninguém pode" = Compliance. Sem exceção.
 
 ---
 
